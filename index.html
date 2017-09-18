@@ -4,9 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>EECS 448 - Exercise 1</title>
 </head>
 <body>
+  <style>
+    .button {
+      display:block;
+      padding:0.5em;
+      margin-left:0.5em;
+      width:100px;
+      text-align:center;
+      border-radius:15px;
+      border:1px solid #000;
+      opacity:1;
+    }
 
+    .button:hover {
+      cursor:pointer;
+      opacity:0.5;
+      transition:all 0.3s;
+    }
+  </style>
+
+  <div style="padding:0.5em;">
+    Enter a Passcode
+  </div>
+  <div style="padding:0.5em;">
+    <input type="password" style="padding:0.5em;" placeholder="Password" id="pass"></input>
+  </div>
+  <div style="padding:0.5em;">
+    <input type="password" style="padding:0.5em;" placeholder="Repeat Password" id="pass_"></input>
+  </div>
+
+  <div onclick="javascript:validate();" class="button">Validate</div>
+
+  <script>
+    function validate() {
+      var password = document.getElementById('pass');
+      var pass_validate = document.getElementById('pass_');
+
+      if (password.value === pass_validate.value) {
+        return alert("Passwords match. Good job, you.");
+      }else if (password.value.length < 8 || pass_validate.value.length < 8) {
+        return alert("Passwords must be at least 8 characters.");
+      }else {
+        return alert("Passwords do not match. Please try again.");
+      }
+    }
+  </script>
 </body>
 </html>
