@@ -16,24 +16,24 @@
       text-align:center;
       border-radius:15px;
       border:1px solid #000;
-      opacity:1;
     }
 
     .button:hover {
       cursor:pointer;
-      opacity:0.5;
-      transition:all 0.3s;
+      border:1px solid #4ed164;
+      color:#777;
+      transition:0.3s;
     }
   </style>
 
   <div style="padding:0.5em;">
-    Enter a Passcode
+    Enter a password below.
   </div>
   <div style="padding:0.5em;">
-    <input type="password" style="padding:0.5em;" placeholder="Password" id="pass"></input>
+    <input type="password" style="padding:0.5em;" placeholder="Password*" id="pass"></input>
   </div>
   <div style="padding:0.5em;">
-    <input type="password" style="padding:0.5em;" placeholder="Repeat Password" id="pass_"></input>
+    <input type="password" style="padding:0.5em;" placeholder="Repeat Password*" id="pass_"></input>
   </div>
 
   <div onclick="javascript:validate();" class="button">Validate</div>
@@ -43,12 +43,14 @@
       var password = document.getElementById('pass');
       var pass_validate = document.getElementById('pass_');
 
-      if (password.value === pass_validate.value) {
-        return alert("Passwords match. Good job, you.");
+      if (password.value.length === 0 || pass_validate.value.length === 0) {
+        return alert("Error: All fields must be filled.");
       }else if (password.value.length < 8 || pass_validate.value.length < 8) {
-        return alert("Passwords must be at least 8 characters.");
+        return alert("Error: Passwords must be at least 8 characters.");
+      }else if (password.value === pass_validate.value) {
+        return alert("Success: Passwords match. Good job, you.");
       }else {
-        return alert("Passwords do not match. Please try again.");
+        return alert("Error: Passwords do not match. Please try again.");
       }
     }
   </script>
