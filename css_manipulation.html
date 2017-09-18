@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EECS 448 - Exercise 4</title>
+</head>
+<body>
+  <style>
+    body {
+      font-family:sans-serif;
+      margin:0;
+      padding:0.5em;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      grid-template-rows:auto;
+      grid-template:
+      "ptext rgb";
+    }
+
+    #P {
+      font-size:12pt;
+      padding:0.5em;
+      margin:0.5em;
+      grid-area:ptext;
+      border:1px solid #000;
+    }
+
+    .rgb_selection{
+      display:block;
+      text-align:left;
+      grid-area:rgb;
+    }
+
+    .button {
+      display:block;
+      padding:0.5em;
+      margin-left:0.5em;
+      width:100px;
+      text-align:center;
+      border-radius:15px;
+      border:1px solid #000;
+    }
+
+    .button:hover {
+      cursor:pointer;
+      border:1px solid #4ed164;
+      color:#777;
+      transition:0.3s;
+    }
+  </style>
+
+  <div class="grid">
+
+    <p id="P">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Doloribus voluptatibus soluta magnam, eveniet nobis, voluptas facere architecto,
+        inventore tempora ratione magni dolores fugit neque qui iste numquam
+        corporis voluptatem alias autem eligendi accusantium earum rerum deleniti.
+        Laudantium asperiores, dolorum nemo esse hic maxime quidem amet unde.
+        Soluta consequuntur, quaerat perspiciatis!
+    </p>
+
+    <div class="rgb_selection">
+      Border
+      <div style="padding:0.5em;">
+        <input style="padding:0.5em;" placeholder="Red (0 - 255)" id="border_r"></input>
+      </div>
+      <div style="padding:0.5em;">
+        <input style="padding:0.5em;" placeholder="Green (0 - 255)" id="border_g"></input>
+      </div>
+      <div style="padding:0.5em;">
+        <input style="padding:0.5em;" placeholder="Blue (0 - 255)" id="border_b"></input>
+      </div>
+      <div style="padding:0.5em;">
+        <input style="padding:0.5em;" placeholder="Width" id="border_width"></input>
+      </div>
+
+      Background Color
+      <div style="padding:0.5em;">
+        <input style="padding:0.5em;" placeholder="Red (0 - 255)" id="back_r"></input>
+      </div>
+      <div style="padding:0.5em;">
+        <input style="padding:0.5em;" placeholder="Green (0 - 255)" id="back_g"></input>
+      </div>
+      <div style="padding:0.5em;">
+        <input style="padding:0.5em;" placeholder="Blue (0 - 255)" id="back_b"></input>
+      </div>
+
+      <div onclick="javascript:runResult();" class="button">Enter Values</div>
+    </div>
+  </div>
+
+  <script>
+
+  function runResult() {
+    var ptag = document.getElementById('P');
+
+    var border_r = document.getElementById('border_r').value;
+    var border_g = document.getElementById('border_g').value;
+    var border_b = document.getElementById('border_b').value;
+    var back_r = document.getElementById('back_r').value;
+    var back_g = document.getElementById('back_g').value;
+    var back_b = document.getElementById('back_b').value;
+    var border_width = document.getElementById('border_width').value;
+    var borderColor = 'rgba(' + border_r + ',' + border_g + ',' + border_b + ',1)';
+    var bgColor = 'rgba(' + back_r + ',' + back_g + ',' + back_b + ',1)';
+
+    ptag.style.width = border_width + 'px';
+    ptag.style.border = '1px solid' + borderColor;
+    ptag.style.backgroundColor = bgColor;
+
+    console.log(bgColor);
+
+  }
+
+
+
+  </script>
+</body>
+</html>
