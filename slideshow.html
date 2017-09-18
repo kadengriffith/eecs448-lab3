@@ -7,6 +7,55 @@
   <title>EECS 448 - Exercise 2</title>
 </head>
 <body>
+  <style>
+  .wrapper {
+    display:block;;
+    height:200px;
+    width:200px;
+    margin:0.5em;
+    background-image:url('assets/image0.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
 
+  .button {
+    display:inline-block;
+    padding:0.5em;
+    margin-left:0.5em;
+    width:100px;
+    text-align:center;
+    border-radius:15px;
+    border:1px solid #000;
+    opacity:1;
+  }
+
+  .button:hover {
+    cursor:pointer;
+    opacity:0.5;
+    transition:all 0.3s;
+  }
+  </style>
+
+  <div class="wrapper"></div>
+  <div class="button" onclick="javascript:slide(-1)">Previous</div>
+  <div class="button" onclick="javascript:slide(1)">Next</div>
+
+  <script>
+  var picture_index = 0;
+  var wrapper = document.getElementsByClassName('wrapper')[0];
+
+  function slide(i) {
+    if(picture_index === 0 && i < 0) {
+      picture_index = 4;
+    }else if(picture_index === 4 && i > 0) {
+      picture_index = 0;
+    }else {
+      picture_index += i;
+    }
+
+    wrapper.style.backgroundImage = 'url(assets/image' + picture_index + '.jpg)';
+  }
+  </script>
 </body>
 </html>
