@@ -57,7 +57,7 @@
   </style>
 
   <div class="grid">
-
+    
     <p id="P">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt aut doloribus quasi repellat, tenetur dolor, sed, nisi rem reiciendis, tempore eligendi? Debitis porro blanditiis suscipit omnis! Nisi aspernatur eaque repudiandae tempora nulla velit, tenetur ad minus odit officia repellat, maiores maxime similique molestiae doloremque mollitia non optio veniam in. Exercitationem temporibus dolorem iure, rerum modi quaerat mollitia aspernatur natus maiores quas, labore. Amet atque laboriosam adipisci delectus fuga sequi, laudantium deleniti eum non, ducimus sit accusamus nobis repudiandae quia sint minima beatae, deserunt ratione cumque dolore labore! Inventore corporis fugiat fuga placeat quidem veritatis repellendus nostrum omnis. Quas eius non, sint numquam tempore pariatur molestias nam harum, maxime commodi libero beatae, consequatur in corporis architecto perferendis necessitatibus id ratione! Aut, officiis necessitatibus expedita voluptate iste. Voluptate aut dolor aliquam, deserunt ea modi qui, consequuntur accusantium necessitatibus voluptates omnis nisi tempore reprehenderit unde minima veritatis voluptas? Molestias odio cum illum obcaecati eligendi at consequatur quae ducimus esse dolorum dicta, reprehenderit nobis fuga, in maiores minus quo consectetur ea totam, adipisci nesciunt atque eius. Exercitationem voluptates minima laboriosam. Maiores molestias fugiat, excepturi nemo voluptatibus, ipsum tempore optio repudiandae cum ullam unde omnis officiis sint magnam inventore hic asperiores facere necessitatibus enim doloribus. Impedit doloribus iure, ullam quas. Amet incidunt voluptatum iure, nisi rem eius fuga cumque ullam mollitia sed ratione quidem officiis nihil quod dolorum debitis repudiandae, laboriosam itaque neque rerum animi eaque cum assumenda perferendis! Eum suscipit odit, non necessitatibus id veniam recusandae velit quis est aperiam veritatis, deserunt sint itaque incidunt praesentium vel enim ea, eos adipisci nostrum. Temporibus, nisi quod eos. Totam similique ipsum harum, eaque recusandae ipsam. Quas hic nihil reiciendis quam in sed a illum minus similique, est, fugit consequatur nam quasi numquam maiores laboriosam aspernatur quibusdam! Sunt mollitia laborum ratione accusantium molestias ducimus dolorem, ipsa ut facilis commodi. Nesciunt illo iure doloribus doloremque animi deserunt tenetur. Quaerat tenetur, ad cumque blanditiis, aliquam eligendi magni qui quibusdam natus voluptatum molestias saepe, a aut officia. Iste sapiente modi earum, ratione praesentium! Porro nesciunt, delectus repudiandae inventore molestiae. Totam, provident a culpa consequatur facere maxime officiis dolorum non, alias cupiditate placeat dolore obcaecati nostrum numquam et ab! Rem laboriosam maiores voluptate eos deleniti. Aut accusamus eveniet, dolores cum illum, unde! Molestias delectus nobis atque qui, illo tenetur soluta id voluptas animi. Excepturi asperiores et illo libero soluta eius cupiditate eos, amet porro adipisci quo iusto temporibus quam repudiandae veritatis esse sint nostrum officiis, dolor autem vel reprehenderit. Eaque, rem. Nisi repudiandae a officiis vitae aperiam assumenda delectus vero dolorem quidem mollitia ullam cupiditate, quia molestias corporis? Dolorem veritatis consequatur culpa officia qui, obcaecati tempore? Magnam expedita, fugit. Cupiditate beatae perspiciatis repellendus quidem. Ut iusto laudantium doloremque praesentium magnam a doloribus quibusdam blanditiis. Esse necessitatibus vitae earum aut, excepturi perspiciatis facere unde? Dolore distinctio, quasi ullam nobis debitis dicta reiciendis quam obcaecati quos accusantium. Vel, eligendi voluptatem mollitia doloribus porro illum dicta quas perferendis odio quo? Eaque quis, minus perferendis at a! Sint sequi explicabo commodi beatae corrupti id necessitatibus dicta corporis asperiores esse, rem, porro libero dolores dolor, aspernatur ducimus. Dolorum eveniet accusantium natus numquam iusto, omnis suscipit. Vero nobis iusto iste voluptatum libero, fugiat at tempora eos voluptate non nisi tenetur doloribus aperiam voluptatem error, temporibus natus cumque, veniam neque vel suscipit blanditiis debitis. Velit inventore, culpa.
     </p>
@@ -93,25 +93,29 @@
   </div>
 
   <script>
-
-  function runResult() {
-    var ptag = document.getElementById('P');
-
-    var border_r = document.getElementById('border_r').value;
-    var border_g = document.getElementById('border_g').value;
-    var border_b = document.getElementById('border_b').value;
-    var back_r = document.getElementById('back_r').value;
-    var back_g = document.getElementById('back_g').value;
-    var back_b = document.getElementById('back_b').value;
-    var border_width = document.getElementById('border_width').value;
-    var borderColor = 'rgba(' + border_r + ',' + border_g + ',' + border_b + ',1)';
-    var bgColor = 'rgba(' + back_r + ',' + back_g + ',' + back_b + ',1)';
-
-    ptag.style.width = border_width + 'px';
-    ptag.style.border = '1px solid ' + borderColor;
-    ptag.style.backgroundColor = bgColor;
-  }
-
+    function runResult() {
+      // Pull target element
+      var ptag = document.getElementById('P');
+      // Read color and width input
+      // This is where input checks would be useful
+      // Not all values need to be present
+      // Color will only display correctly given proper input from the user
+      var border_r = document.getElementById('border_r').value;
+      var border_g = document.getElementById('border_g').value;
+      var border_b = document.getElementById('border_b').value;
+      var back_r = document.getElementById('back_r').value;
+      var back_g = document.getElementById('back_g').value;
+      var back_b = document.getElementById('back_b').value;
+      var border_width = document.getElementById('border_width').value;
+      // Render the colors
+      var borderColor = 'rgba(' + border_r + ',' + border_g + ',' + border_b + ',1)';
+      var bgColor = 'rgba(' + back_r + ',' + back_g + ',' + back_b + ',1)';
+      // Apply the transformations to the target element
+      ptag.style.width = border_width + 'px';
+      ptag.style.border = '1px solid ' + borderColor;
+      ptag.style.backgroundColor = bgColor;
+      // Implicit return
+    }
   </script>
 </body>
 </html>

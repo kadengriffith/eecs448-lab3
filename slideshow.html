@@ -8,33 +8,33 @@
 </head>
 <body>
   <style>
-  .wrapper {
-    display:block;;
-    height:200px;
-    width:200px;
-    margin:0.5em;
-    background-image:url('assets/image0.jpg');
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-  }
+    .wrapper {
+      display:block;;
+      height:200px;
+      width:200px;
+      margin:0.5em;
+      background-image:url('assets/image0.jpg');
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:center;
+    }
 
-  .button {
-    display:inline-block;
-    padding:0.5em;
-    margin-left:0.5em;
-    width:100px;
-    text-align:center;
-    border-radius:15px;
-    border:1px solid #000;
-    opacity:1;
-  }
+    .button {
+      display:inline-block;
+      padding:0.5em;
+      margin-left:0.5em;
+      width:100px;
+      text-align:center;
+      border-radius:15px;
+      border:1px solid #000;
+    }
 
-  .button:hover {
-    cursor:pointer;
-    opacity:0.5;
-    transition:all 0.3s;
-  }
+    .button:hover {
+      cursor:pointer;
+      border:1px solid #4ed164;
+      color:#777;
+      transition:0.3s;
+    }
   </style>
 
   <div class="wrapper"></div>
@@ -42,20 +42,23 @@
   <div class="button" onclick="javascript:slide(1)">Next</div>
 
   <script>
-  var picture_index = 0;
-  var wrapper = document.getElementsByClassName('wrapper')[0];
+    // Matching index ( # ) to first picture#.jpg
+    var picture_index = 0;
+    // Pull target element
+    var wrapper = document.getElementsByClassName('wrapper')[0];
 
-  function slide(i) {
-    if(picture_index === 0 && i < 0) {
-      picture_index = 4;
-    }else if(picture_index === 4 && i > 0) {
-      picture_index = 0;
-    }else {
-      picture_index += i;
+    function slide(i) {
+      // Check to determine wrap around
+      if(picture_index === 0 && i < 0) {
+        picture_index = 4;
+      }else if(picture_index === 4 && i > 0) {
+        picture_index = 0;
+      }else {
+        picture_index += i;
+      }
+      // Change the picture
+      wrapper.style.backgroundImage = 'url(assets/image' + picture_index + '.jpg)';
     }
-
-    wrapper.style.backgroundImage = 'url(assets/image' + picture_index + '.jpg)';
-  }
   </script>
 </body>
 </html>
