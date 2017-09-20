@@ -42,6 +42,7 @@
       padding:0.5em;
       margin-top:20%;
       margin-right:20%;
+      background-color:none;
       border:1px solid #f4f4f4;
       color:#f4f4f4;
       float:right;
@@ -62,12 +63,26 @@
       background-color:rgba(255,255,255,0.85);
     }
 
-    @media screen and (max-width: 1000px) {
+    .footnotes {
+      font-size:8pt;
+      font-weight:100;
+      text-align:center;
+      opacity:0.5;
+    }
+
+    .padding {
+      margin:0;
+      padding:0;
+    }
+
+    @media screen and (max-width: 850px) {
       .name {
         display:block;
         top:0.5em;
         float:none;
-        width:200px;
+        width:220px;
+        background-color:rgba(255,255,255,0.85);
+        color:#333;
         margin-left:auto;
         margin-right:auto;
       }
@@ -75,10 +90,19 @@
       .project_view {
         display:block;
         width:100%;
+        padding:0;
         top:auto;
         border-bottom-right-radius:0px;
         overflow-x:hidden;
         overflow-y:visible;
+      }
+
+      .padding {
+        padding:0.5em;
+      }
+
+      .footnotes {
+        text-align:left;
       }
     }
   </style>
@@ -88,25 +112,27 @@
   </h1>
 
   <div class="project_view">
-    <h1>Project View</h1>
+    <div class="padding">
+      <h1>Project View</h1>
 
-    <h3>Lab 01</h3>
-    <a href="https://github.com/kadengriffith/eecs448-lab01" target="new">View on GitHub</a>
+      <h3>Lab 01</h3>
+      <a href="https://github.com/kadengriffith/eecs448-lab01" target="new">View on GitHub</a>
 
-    <h3>Lab 02</h3>
-    <a href="https://github.com/kadengriffith/eecs448-lab02" target="new">View on GitHub</a>
+      <h3>Lab 02</h3>
+      <a href="https://github.com/kadengriffith/eecs448-lab02" target="new">View on GitHub</a>
 
-    <h3>Project 1</h3>
-    <a href="https://github.com/mt3443/eecs448-project1" target="new">View on GitHub</a>
+      <h3>Project 1</h3>
+      <a href="https://github.com/mt3443/eecs448-project1" target="new">View on GitHub</a>
 
 
-    <h3>Lab 03</h3>
-    <a href="password_validate.html" target="new">Password Validation</a>
-    <a href="slideshow.html" target="new">Slideshow</a>
-    <a href="profile.html" target="new">Profile Example</a>
-    <a href="css_manipulation.html" target="new">CSS Manipluation</a>
+      <h3>Lab 03</h3>
+      <a href="password_validate.html" target="new">Password Validation</a>
+      <a href="slideshow.html" target="new">Slideshow</a>
+      <a href="profile.html" target="new">Profile Example</a>
+      <a href="css_manipulation.html" target="new">CSS Manipluation</a>
 
-    <p style="font-size:8pt;font-weight:100;text-align:center;opacity:0.5;">Property of Kaden Griffith -- Last Update: 09 19 2017</p>
+      <p class="footnotes">Property of Kaden Griffith -- Last Update: 09 19 2017</p>
+    </div>
   </div>
 </body>
 </html>
